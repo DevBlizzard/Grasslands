@@ -97,16 +97,16 @@ class Block {
 
 const DIRT_TEXTURES = {
   "top": [
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-top-1.png",
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-top-2.png",
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-top-3.png"
+    "",
+    "",
+    ""
   ],
   "side": [
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-side-1.png",
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-side-2.png",
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-side-3.png",
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-side-4.png",
-    "https://github.com/assertchris-tutorials/tutorial-javascript-minecraft-editor/raw/master/textures/dirt-side-5.png"
+    "",
+    "",
+    "",
+    "",
+    ""
   ]
 };
 
