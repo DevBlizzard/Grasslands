@@ -7,7 +7,7 @@ html, body {
 
 body::after {
   font-family: "operator mono", "sans-serif";
-  content: "Click and drag to rotate, or scroll mouse wheel to zoom...";
+  content: "Click and drag to rotate the camera and scroll the mouse wheel to zoom...";
   position: absolute;
   top: 25px;
   left: 25px;
