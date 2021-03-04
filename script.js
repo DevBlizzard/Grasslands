@@ -97,16 +97,16 @@ class Block {
 
 const DIRT_TEXTURES = {
   "top": [
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg",
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg",
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg"
+    "white.jpg",
+    "white.jpg",
+    "white.jpg"
   ],
   "side": [
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg",
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg",
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg",
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg",
-    "https://github.com/DevBlizzard/Color-Build-2/blob/b59e4a098a40df456e8cfe9a7d739269d450ea93/white.jpg"
+    "white.jpg",
+    "white.jpg",
+    "white.jpg",
+    "white.jpg",
+    "white.jpg"
   ]
 };
 
