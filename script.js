@@ -97,16 +97,16 @@ class Block {
 
 const DIRT_TEXTURES = {
   "top": [
-    "white.jpg",
-    "white.jpg",
-    "white.jpg"
+    "green.jpg",
+    "green.jpg",
+    "green.jpg"
   ],
   "side": [
-    "white.jpg",
-    "white.jpg",
-    "white.jpg",
-    "white.jpg",
-    "white.jpg"
+    "green.jpg",
+    "green.jpg",
+    "green.jpg",
+    "green.jpg",
+    "green.jpg"
   ]
 };
 
