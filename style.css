@@ -80,7 +80,3 @@ html, body {
   pointer-events: none;
   -webkit-filter: brightness(1.5);
 }
-
-.subtraction .ghost {
-  display: none;
-}
