@@ -314,3 +314,12 @@ function changeViewport() {
     `
   });
 };
+$body.on("keydown", function(e) {
+  if (e.altKey || e.controlKey || e.metaKey) {
+    $body.addClass("subtraction");
+  }
+});
+
+$body.on("keyup", function(e) {
+  $body.removeClass("subtraction");
+});
