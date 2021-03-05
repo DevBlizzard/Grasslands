@@ -1,3 +1,5 @@
+"use strict"
+
 class Block {
   constructor(x, y, z) {
     this.x = x;
@@ -93,7 +95,7 @@ class Block {
   }
 }
 
-const GRASS_TEXTURES = {
+const DIRT_TEXTURES = {
   "top": [
     "green.jpg",
     "green.jpg",
@@ -168,18 +170,22 @@ function createCoordinatesFrom(side, x, y, z) {
 
 $body.on("click", ".side", function(e) {
   const $this = $(this);
-  const previous = $this.data("block");
+  let previous = $this.data("block");
 
-  const coordinates = createCoordinatesFrom(
-    $this.data("type"),
-    previous.x,
-    previous.y,
-    previous.z
-  );
+  if ($body.hasClass("subtraction")) {
+    previous.block.remove();
+    previous = null;
+  } else {
+    const coordinates = createCoordinatesFrom(
+      $this.data("type"),
+      previous.x,
+      previous.y,
+      previous.z
+    );
 
-  const next = new Block.Grass(...coordinates);
-
-  next.block.appendTo($scene);
+    const next = new Block.Grass(...coordinates);
+    next.block.appendTo($scene);
+  }
 });
 
 let ghost = null;
@@ -230,7 +236,7 @@ let sceneTransformZ = 60;
 let sceneTransformScale = 1;
 
 $body.on("mousewheel", function(event) {
-  if (event.originalEvent.deltaY > 0) {
+  if (event.deltaY > 0) {
     sceneTransformScale -= 0.05;
   } else {
     sceneTransformScale += 0.05;
@@ -314,6 +320,7 @@ function changeViewport() {
     `
   });
 };
+
 $body.on("keydown", function(e) {
   if (e.altKey || e.controlKey || e.metaKey) {
     $body.addClass("subtraction");
