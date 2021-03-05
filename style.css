@@ -5,6 +5,14 @@ html, body {
   height: 100%;
 }
 
+body::after {
+  font-family: "operator mono", "sans-serif";
+  content: "Hold alt/control/command and click to remove blocks...";
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
 .scene {
   position: absolute;
   left: 50%;
@@ -78,4 +86,8 @@ html, body {
   opacity: 0.6;
   pointer-events: none;
   -webkit-filter: brightness(1.5);
+}
+
+.subtraction .ghost {
+  display: none;
 }
