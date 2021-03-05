@@ -102,11 +102,11 @@ const GRASS_TEXTURES = {
     "green.jpg"
   ],
   "side": [
-    "green.jpg",
-    "green.jpg",
-    "green.jpg",
-    "green.jpg",
-    "green.jpg"
+    "brown.jpg",
+    "brown.jpg",
+    "brown.jpg",
+    "brown.jpg",
+    "brown.jpg"
   ]
 };
 
