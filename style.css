@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: #1E90FF;
+  background-color: #56BAF8
 }
 
 .scene {
@@ -67,6 +67,10 @@ html, body {
   outline: 1px solid rgba(0, 255, 0, 0.5);
 }
 
+.subtraction .block:hover .side {
+  outline: 1px solid rgba(255, 0, 0, 0.5);
+}
+
 .ghost {
   pointer-events: none;
 }
@@ -75,4 +79,8 @@ html, body {
   opacity: 0.6;
   pointer-events: none;
   -webkit-filter: brightness(1.5);
+}
+
+.subtraction .ghost {
+  display: none;
 }
