@@ -12,6 +12,7 @@ function requestAnimFrame() {
   lastCalledTime = Date.now();
   fps = 1/delta;
 }
+requestAnimFrame()
 class Block {
   constructor(x, y, z) {
     this.x = x;
