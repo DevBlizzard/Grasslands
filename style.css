@@ -6,14 +6,6 @@ html, body {
   background-color: #1E90FF;
 }
 
-body::after {
-  font-family: "operator mono", "sans-serif";
-  content: "Click and drag to rotate the camera and scroll the mouse wheel to zoom...";
-  position: absolute;
-  top: 25px;
-  left: 25px;
-}
-
 .scene {
   position: absolute;
   left: 50%;
