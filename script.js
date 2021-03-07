@@ -1,3 +1,5 @@
+"use strict"
+
 var saveBtn = document.getElementById('save-btn');
 saveBtn.addEventListener('click', function() {
   // get value of inputs and add them to the actual elements
