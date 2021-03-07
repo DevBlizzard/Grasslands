@@ -8,7 +8,7 @@ html, body {
 
 body::after {
   font-family: "operator mono", "sans-serif";
-  content: "Hold alt/control/command and click to remove blocks...";
+  content: "Alt+Click = Remove Blocks";
   position: absolute;
   top: 25px;
   left: 25px;
