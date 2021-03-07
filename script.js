@@ -95,11 +95,11 @@ class Block {
   }
 }
 
-const DIRT_TEXTURES = {
+const GRASS_TEXTURES = {
   "top": [
     "green.jpg",
     "green.jpg",
-	 "green.jpg"
+    "green.jpg"
   ],
   "side": [
     "green.jpg",
@@ -110,21 +110,21 @@ const DIRT_TEXTURES = {
   ]
 };
 
-class Dirt extends Block {
+class Grass extends Block {
   createTexture(type) {
     if (type === "top" || type === "bottom") {
-      const texture = DIRT_TEXTURES.top.random();
+      const texture = GRASS_TEXTURES.top.random();
 
       return `url(${texture})`;
     }
 
-    const texture = DIRT_TEXTURES.side.random();
+    const texture = GRASS_TEXTURES.side.random();
 
     return `url(${texture})`;
   }
 }
 
-Block.Dirt = Dirt;
+Block.Grass = Grass;
 
 Array.prototype.random = function() {
   return this[Math.floor(Math.random() * this.length)];
@@ -135,7 +135,7 @@ const $body = $("body");
 
 for (let x = 0; x < 6; x++) {
   for (let y = 0; y < 6; y++) {
-    let next = new Block.Dirt(x, y, 0);
+    let next = new Block.Grass(x, y, 0);
     next.block.appendTo($scene);
   }
 }
@@ -170,18 +170,22 @@ function createCoordinatesFrom(side, x, y, z) {
 
 $body.on("click", ".side", function(e) {
   const $this = $(this);
-  const previous = $this.data("block");
+  let previous = $this.data("block");
 
-  const coordinates = createCoordinatesFrom(
-    $this.data("type"),
-    previous.x,
-    previous.y,
-    previous.z
-  );
+  if ($body.hasClass("subtraction")) {
+    previous.block.remove();
+    previous = null;
+  } else {
+    const coordinates = createCoordinatesFrom(
+      $this.data("type"),
+      previous.x,
+      previous.y,
+      previous.z
+    );
 
-  const next = new Block.Dirt(...coordinates);
-
-  next.block.appendTo($scene);
+    const next = new Block.Grass(...coordinates);
+    next.block.appendTo($scene);
+  }
 });
 
 let ghost = null;
@@ -194,7 +198,7 @@ function removeGhost() {
 }
 
 function createGhostAt(x, y, z) {
-  const next = new Block.Dirt(x, y, z);
+  const next = new Block.Grass(x, y, z);
 
   next.block
     .addClass("ghost")
@@ -232,7 +236,7 @@ let sceneTransformZ = 60;
 let sceneTransformScale = 1;
 
 $body.on("mousewheel", function(event) {
-  if (event.originalEvent.deltaY > 0) {
+  if (event.deltaY > 0) {
     sceneTransformScale -= 0.05;
   } else {
     sceneTransformScale += 0.05;
@@ -316,3 +320,9 @@ function changeViewport() {
     `
   });
 };
+
+$body.on("keydown", function(e) {
+  if (e.altKey || e.controlKey || e.metaKey) {
+    $body.addClass("subtraction");
+  }
+});
