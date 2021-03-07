@@ -7,7 +7,7 @@ html, body {
 }
 
 body::after {
-  font-family: "operator mono", "sans-serif";
+  font-family: "Verdana";
   content: "Alt+Click = Remove Blocks";
   position: absolute;
   top: 25px;
