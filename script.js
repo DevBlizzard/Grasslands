@@ -95,7 +95,7 @@ class Block {
   }
 }
 
-const GRASS_TEXTURES = {
+const DIRT_TEXTURES = {
   "top": [
     "green.jpg",
     "green.jpg",
@@ -110,21 +110,21 @@ const GRASS_TEXTURES = {
   ]
 };
 
-class Grass extends Block {
+class Dirt extends Block {
   createTexture(type) {
     if (type === "top" || type === "bottom") {
-      const texture = GRASS_TEXTURES.top.random();
+      const texture = DIRT_TEXTURES.top.random();
 
       return `url(${texture})`;
     }
 
-    const texture = GRASS_TEXTURES.side.random();
+    const texture = DIRT_TEXTURES.side.random();
 
     return `url(${texture})`;
   }
 }
 
-Block.Grass = Grass;
+Block.Dirt = Dirt;
 
 Array.prototype.random = function() {
   return this[Math.floor(Math.random() * this.length)];
@@ -135,7 +135,7 @@ const $body = $("body");
 
 for (let x = 0; x < 6; x++) {
   for (let y = 0; y < 6; y++) {
-    let next = new Block.Grass(x, y, 0);
+    let next = new Block.Dirt(x, y, 0);
     next.block.appendTo($scene);
   }
 }
@@ -183,7 +183,7 @@ $body.on("click", ".side", function(e) {
       previous.z
     );
 
-    const next = new Block.Grass(...coordinates);
+    const next = new Block.Dirt(...coordinates);
     next.block.appendTo($scene);
   }
 });
@@ -198,7 +198,7 @@ function removeGhost() {
 }
 
 function createGhostAt(x, y, z) {
-  const next = new Block.Grass(x, y, z);
+  const next = new Block.Dirt(x, y, z);
 
   next.block
     .addClass("ghost")
@@ -325,4 +325,8 @@ $body.on("keydown", function(e) {
   if (e.altKey || e.controlKey || e.metaKey) {
     $body.addClass("subtraction");
   }
+});
+
+$body.on("keyup", function(e) {
+  $body.removeClass("subtraction");
 });
