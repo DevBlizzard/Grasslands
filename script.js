@@ -1,21 +1,5 @@
 "use strict"
 
-var saveBtn = document.getElementById('save-btn');
-saveBtn.addEventListener('click', function() {
-  // get value of inputs and add them to the actual elements
-  [].forEach.call(document.querySelectorAll('input'), function(input) {
-    input.setAttribute('value', input.value);
-  });
-  // get the document as a string
-  var doc = document.documentElement.innerHTML;
-  save(doc);
-});
-
-function save(doc) {
-  localStorage.doc = doc;
-  loadSavedDoc();
-}
-
 class Block {
   constructor(x, y, z) {
     this.x = x;
