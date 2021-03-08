@@ -9,7 +9,6 @@ html, body {
 body::after {
   font-family: "Verdana";
   content: "Alt+Click = Remove blocks";
-  content: "Click = Add blocks";
   position: absolute;
   top: 25px;
   left: 25px;
